@@ -133,7 +133,7 @@ export default function JokeList({ jokes, setSelectedTag, selectedTag, loading, 
                                     </div> */}
                                         </div>
                                         <div className="joke-card-footer">
-                                            <button>Go <img className='go-icon' src="/icons/right-arrow.png" /></button>
+                                            <button onClick={() => handleViewJoke(e.id)}>Go <img className='go-icon' src="/icons/right-arrow.png" /></button>
                                         </div>
                                     </div>
                                 )
