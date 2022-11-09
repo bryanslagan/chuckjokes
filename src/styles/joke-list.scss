@@ -1,0 +1,194 @@
+@import 'globals';
+
+.joke-list {
+    background-color: #eeeeee;
+    flex: 1;
+    min-height: 50vh;
+    @extend .flex;
+    align-items: stretch;
+
+    .category-selection {
+        background-color: $white;
+        padding: 50px 0;
+        @extend .flex-col;
+
+        h3 {
+            padding: 0 50px;
+        }
+
+        .category-list {
+            margin-top: 30px;
+            @extend .flex-col;
+
+            button {
+                padding: 20px 50px;
+                text-align: left;
+                background-color: transparent;
+                min-width: 300px;
+                font-weight: 600;
+
+                img {
+                    width: 15px;
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: #eeeeee;
+                }
+
+                &.active {
+                    @extend .flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $black;
+                    background-color: #f5d31b;
+
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .jokes-container {
+        padding: 50px;
+        flex: 1;
+        background-color: #f5f5f5;
+        border-left: 1px solid #eeeeee;
+        @extend .flex-col;
+
+        .section-title {
+            border-bottom: 1px solid $gray;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .joke-cards {
+            @extend .flex, .flex-gap-2;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            justify-content: center;
+            flex: 1;
+
+            .joke-card {
+                width: 30%;
+                height: 350px;
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                @extend .flex-col, .flex-gap-2;
+                justify-content: space-between;
+
+                &:hover{
+                    box-shadow: 0 16px 20px -12px rgba($color: #000000, $alpha: .16)
+                }
+
+                &-content {
+                    @extend .flex-col, .flex-gap-2;
+
+                    h4 {
+                        text-transform: uppercase;
+                    }
+
+                    p {
+                        display: -webkit-box;
+                        // max-width: 200px;
+                        -webkit-line-clamp: 8;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                    .tags{
+                        @extend .flex;
+                        gap: .3rem;
+                        flex-wrap: wrap;
+
+                        .tag{
+                            font-size: 12px;
+                            padding: 5px 12px;
+                            background-color: #1b9ef5;
+                            color: $white;
+                            font-weight: 600;
+                            border-radius: 50px;
+                        }
+                    }
+                }
+
+                &-skeleton{
+                    @extend .joke-card;
+
+                    .skeleton-title{
+                        width: 60%;
+                        height: 16px;
+                        background-color: #eeeeee;
+                        border-radius: 5px
+                    }
+
+                    .skeleton-text{
+                        width: 100%;
+                        height: 12px;
+                        background-color: #eeeeee;
+                        border-radius: 5px
+                    }
+
+                    .skeleton-btn{
+                        width: 40%;
+                        height: 40px;
+                        background-color: #eeeeee;
+                        border-radius: 5px
+                    }
+                }
+
+                &-footer {
+                    @extend .flex;
+                    justify-content: flex-end;
+
+                    button {
+                        @extend .flex, .flex-gap-1;
+                        font-weight: 600;
+                        align-items: center;
+                        border-radius: 8px;
+                        background-color: #f5d31b;
+                        color: $white;
+                    }
+                }
+
+
+                .go-icon {
+                    width: 10px;
+                }
+            }
+        }
+
+        .pagination{
+            @extend .flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button{
+                @extend .flex, .flex-gap-1;
+                color: #f5d31b;
+                font-weight: 700;
+                align-items: center;
+                background-color: $white;
+                border-radius: 5px;
+                border: 1px solid #eeeeee;
+                img{
+                    width: 20px;
+                }
+            }
+
+            .page-indicator{
+                @extend .fullWidth, .flex;
+                justify-content: center;
+            }
+
+            .next-btn{
+                @extend .fullWidth, .flex;
+                justify-content: flex-end;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,31 @@
+@import 'globals';
+
+.footer{
+    @extend .fullWidth, .flex, .flex-gap-10;
+    height: 400px;
+    overflow: hidden;
+    background-color: #f5e224;
+
+    img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center ;
+    }
+
+    .footer-text{
+        @extend .flex-col, .flex-gap-3;
+        justify-content: center;
+
+        button{
+            @extend .flex, .flex-gap-1;
+            align-items: center;
+            justify-content: center;
+            background-color: #303030;
+            color: $white;
+            border-radius: 5px;
+            img{
+                width: 10px;
+            }
+        }
+    }
+}

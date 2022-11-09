@@ -1,0 +1,91 @@
+@import 'globals';
+
+.header {
+    @extend .flex-col;
+    align-items: stretch;
+
+    .popup-menu{
+        right: 0px;
+
+        &::after{
+            right: 20px;
+        }
+    }
+
+    .navbar {
+        display: fixed;
+        @extend .flex, .flex-gap-2;
+        align-items: stretch;
+        justify-content: flex-end;
+        padding: 0 20px;
+        background-color: $black;
+
+        button {
+            @extend .lg-btn, .bg-transparent, .flex, .flex-gap-1;
+            color: $white;
+            align-items: center;
+            justify-content: center;
+
+            &:hover,
+            .active {
+                background-color: $brown;
+            }
+
+            img:last-child {
+                margin-left: 15px;
+            }
+        }
+
+        .profile-menu {
+            @extend .flex, .flex-gap-1;
+            align-items: center;
+            color: $white;
+            font-size: 14px;
+
+            button {
+                padding: 0;
+                height: 40px;
+                width: 40px;
+                border-radius: 20px;
+                background-color: $white;
+                border: 3px solid $blue;
+
+                img {
+                    filter: invert(.5);
+                }
+
+                &:hover {
+                    background-color: $gray;
+                }
+            }
+        }
+    }
+
+    .banner {
+        height: 350px;
+        @extend .flex, .flex-gap-4;
+        align-items: center;
+        padding: 0 50px;
+        background-color: #f5d31b;
+
+        .title{
+            @extend .flex-col, .flex-gap-1;
+            align-items: flex-start;
+        }
+
+        img{
+            height: 100%;
+        }
+
+        h1 {
+            color: $black;
+            font-size: 50px;
+            font-weight: 400;
+        }
+
+        h3 {
+            color: $white;
+            font-weight: 700;
+        }
+    }
+}
