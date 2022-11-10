@@ -29,3 +29,17 @@
         }
     }
 }
+
+@media screen and (max-width: 750px) {
+    .footer{
+        gap: 0
+    }    
+}
+@media screen and (max-width: 750px) {
+    .footer-text{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }    
+}

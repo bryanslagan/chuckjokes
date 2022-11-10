@@ -91,3 +91,28 @@
         }
     }
 }
+
+@media screen and (max-width: 460px) {
+    .action-text{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 460px) {
+    .action-text{
+        display: none !important;
+    }
+
+    .actions{
+        button{
+            padding: 12px;
+            width: fit-content;
+            min-width: 0 !important;
+        }
+    }
+
+    .navigation{
+        button{
+            min-width: 0 !important;
+        }
+    }
+}

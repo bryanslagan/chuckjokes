@@ -28,7 +28,10 @@ function App() {
   }, [selectedTag, searchKey]);
 
   useEffect(() => {
-    if (jokes) {
+    if (jokes) {;  
+      if(jokes.total === 1 && searchKey){
+        navigate(`/details/${jokes.result[0].id}`)
+      }
       setJokeList(jokes.result);
     }
   }, [jokes, searchKey]);

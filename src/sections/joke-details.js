@@ -79,12 +79,12 @@ export default function JokeDetails({ jokes }) {
             {
                 joke ?
                     <div className="joke-details">
-                        <h3>{joke?.categories[0]?.substr(0, 1).toUpperCase() + joke?.categories[0]?.substr(1) ?? "Uncategorized"}</h3>
+                        <h3>{joke?.categories.length ? joke?.categories[0]?.substr(0, 1).toUpperCase() + joke?.categories[0]?.substr(1) : "Uncategorized"}</h3>
                         <p>Posted on {(new Date(joke?.created_at)).toDateString()}</p>
                         <p>{joke?.value}</p>
                         <div className="actions">
-                            <button onClick={handleLike}>{liked[joke?.id] ?? 0} Like <img src="/icons/hand.png" /></button>
-                            <button onClick={handleDislike}>{disliked[joke?.id] ?? 0} Dislike <img src="/icons/hand-copy.png" /></button>
+                            <button onClick={handleLike}><span class="action-text">{liked[joke?.id] ?? 0} Like</span> <img src="/icons/hand.png" /></button>
+                            <button onClick={handleDislike}><span class="action-text">{disliked[joke?.id] ?? 0} Dislike</span> <img src="/icons/hand-copy.png" /></button>
                         </div>
                     </div> :
                     <div className="joke-details">

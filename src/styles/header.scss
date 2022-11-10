@@ -89,3 +89,39 @@
         }
     }
 }
+
+@media screen and (max-width: 850px) {
+
+    .navbar {
+        >button{
+            display: none !important;
+        }
+
+        .profile-menu{
+            padding: 10px 0;
+        }
+    }
+
+    .banner{
+        flex-direction: column;
+        gap: 0 !important;
+        height: auto !important;
+        >img{
+            height: 200px !important;
+        }
+        
+        .title{
+            align-items: stretch !important;
+
+            *{
+                text-align: center;
+            }
+        }
+
+        .text-input{
+            margin-bottom: 50px;
+            width: 100% !important;
+            // height: 60px;
+        }
+    }
+}

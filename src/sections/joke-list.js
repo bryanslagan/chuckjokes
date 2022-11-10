@@ -9,6 +9,7 @@ export default function JokeList({ jokes, setSelectedTag, selectedTag, loading, 
 
     const [categories, setCategories] = useState([]);
     const [page, setPage] = useState(1);
+    const [categoryIsOpen, setOpenCategory] = useState(false);
 
     useEffect(() => {
         if (jokes && !categories.length) {
@@ -34,8 +35,11 @@ export default function JokeList({ jokes, setSelectedTag, selectedTag, loading, 
 
     return (
         <div className="joke-list">
-            <div className='category-selection'>
+            <div className={`category-selection ${categoryIsOpen ? 'open' : ''}`}>
+                <div className='category-title'>
                 <h3>Categories:</h3>
+                <button onClick={() => setOpenCategory(false)}> <img src='/icons/left-arrow.png'/> </button>
+                </div>
                 <div className='category-list'>
                     {
                         categories.map(e =>
@@ -48,6 +52,7 @@ export default function JokeList({ jokes, setSelectedTag, selectedTag, loading, 
                 </div>
             </div>
             <div className='jokes-container'>
+                <button onClick={() => setOpenCategory(true)} className='category-btn'>Categories</button>
                 {
                     selectedTag || searchKey ? null :
                         <>
